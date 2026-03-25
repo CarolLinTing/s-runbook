@@ -1,0 +1,26 @@
+#### 檔案 4：`mkdocs.yml`
+* **建立位置**：`swift-runbook` 根目錄。
+* **作用**：設定主題、導覽列與搜尋引擎。
+* **請複製貼上以下內容**：
+
+```yaml
+site_name: SWIFT Incident Runbook (內部機密)
+site_description: 僅限銀行內部 IT 與 On-Call 人員使用
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
