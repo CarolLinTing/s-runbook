@@ -1,1 +1,29 @@
+name: Deploy MkDocs to GitHub Pages
 
+on:
+  push:
+    branches:
+      - main # 當有程式碼推送到 main 分支時觸發
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 注意：如果銀行內部有指定的 Runner 名稱，請替換這裡
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install MkDocs and Material theme
+        run: pip install mkdocs-material
+
+      - name: Build and Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
