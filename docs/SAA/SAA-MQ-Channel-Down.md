@@ -17,7 +17,12 @@ tags:
 請登入 SAA Server，並執行以下指令檢查 MQ 狀態：
 ```bash
 dsplinkmq -all
+🛠️ 2. 處理步驟
+如果發現 Channel 是 INACTIVE，請執行重啟腳本：
 
+Bash
+/opt/swift/saa/bin/restart_mq.sh
+📝 ServiceNow 快速結案紀錄產生器
 <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0;">
 
 <div style="margin-bottom: 15px;">
